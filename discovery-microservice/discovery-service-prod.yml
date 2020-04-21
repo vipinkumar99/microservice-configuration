@@ -1,0 +1,4 @@
+server:  port: 8761spring:  application:    name: discovery-serviceeureka:  instance:    hostname: localhost          prefer-ip-address: true    lease-expiration-duration-in-seconds: 2  client:    register-with-eureka: false    fetch-registry: false    datacenter: mumbai-india  environment: production
+
+
+

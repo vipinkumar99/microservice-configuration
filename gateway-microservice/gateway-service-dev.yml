@@ -1,0 +1,38 @@
+server:
+  port: 8877
+spring:
+  application:
+    name: gateway-service  
+zuul:
+  sensitive-headers: Cookie,Set-Cookie
+  prefix: /api
+  ignoredServices: '*'
+  routes:
+    resource:
+    CUSTOMER-SERVICE:
+     path: /customerManagement/**
+     service-id: CUSTOMER-SERVICE
+    RENT-SERVICE:
+     path: /rentManagement/**
+     service-id: RENT-SERVICE
+    VEHICLE-SERVICE:
+      path: /vehicleManagement/**
+      service-id: VEHICLE-SERVICE 
+    HISTORY-SERVICE:
+     path: /historyManagement/**
+     service-id: HISTORY-SERVICE 
+    ADMINSTRATOR-SERVICE:
+     path: /adminstratorManagement/**
+     service-id: ADMINSTRATOR-SERVICE 
+    AUTHORIZATION-SERVICE:
+     path: /authorization/**
+     service-id: AUTHORIZATION-SERVICE
+     
+management:
+  endpoint:
+    routes:
+      enabled: true
+    restart:
+      enabled: true
+    shutdown:
+      enabled: true

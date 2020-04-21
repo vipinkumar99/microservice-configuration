@@ -1,0 +1,35 @@
+server:
+  port: 8082
+  ribbon:
+   listOfServers : localhost:8081,localhost:8082,localhost:8083
+   ServerListRefreshInterval: 1000
+   eureka:
+    enabled : false
+    
+spring:
+  application:
+    name: history-service
+    
+security:
+  oauth2:
+    resource:
+      token-info-uri: http://localhost:9191/oauth/check_token
+    client:
+      client-id: mobile
+      client-secret: mobile123
+      resource-ids: oauth2-resource
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+    registry-fetch-interval-seconds: 1
+  instance:
+    hostname: localhost
+    preferIpAddress: true
+    lease-renewal-interval-in-seconds: 1
+
+
+
