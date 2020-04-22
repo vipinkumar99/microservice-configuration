@@ -1,5 +1,5 @@
-server:
-  port: 9191
+#server:
+#  port: 9191
 spring:
   datasource:
     url: jdbc:mysql://localhost:3306/rentcloundprofile?createDatabaseIfNotExist=true
@@ -15,8 +15,8 @@ spring:
       hibernate:
         show_sql: true
         format_sql: true
-  application:
-    name: authorization-service
+#  application:
+#    name: authorization-service
 
 eureka:
   client:

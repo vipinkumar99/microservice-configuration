@@ -1,8 +1,8 @@
-server:
-  port: 8877
+#server:
+#  port: 8877
 spring:
-  application:
-    name: gateway-service  
+#  application:
+#    name: gateway-service  
 zuul:
   sensitive-headers: Cookie,Set-Cookie
   prefix: /api
