@@ -1,15 +1,9 @@
 server:
-  port: 8082
   ribbon:
    listOfServers : localhost:8081,localhost:8082,localhost:8083
    ServerListRefreshInterval: 1000
    eureka:
-    enabled : false
-    
-spring:
-  application:
-    name: history-service
-    
+    enabled : false    
 security:
   oauth2:
     resource:
@@ -18,7 +12,6 @@ security:
       client-id: mobile
       client-secret: mobile123
       resource-ids: oauth2-resource
-
 eureka:
   client:
     register-with-eureka: true
@@ -30,6 +23,7 @@ eureka:
     hostname: localhost
     preferIpAddress: true
     lease-renewal-interval-in-seconds: 1
+    instance-id: ${spring.application.name}-${random.int}
 
 
 

@@ -1,13 +1,8 @@
-server:
-  port: 8081
 spring:
-  application:
-    name: customer-service
   datasource:
     url: jdbc:mysql://localhost:3306/rentcloundprofile?createDatabaseIfNotExist=true
     username: root
     password: root
-
   jpa:
     hibernate:
       ddl-auto: update
@@ -24,8 +19,7 @@ security:
     client:
       client-id: mobile
       client-secret: mobile123
-      resource-ids: oauth2-resource
-  
+      resource-ids: oauth2-resource  
 eureka:
   client:
     register-with-eureka: true
@@ -37,5 +31,6 @@ eureka:
     hostname: localhost
     preferIpAddress: true
     lease-renewal-interval-in-seconds: 1
+    instance-id: ${spring.application.name}-${random.int}
     
     

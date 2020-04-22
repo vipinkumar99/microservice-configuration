@@ -1,13 +1,8 @@
-server:
-  port: 8084
 spring:
-  application:
-    name: rent-service
   datasource:
     url: jdbc:mysql://localhost:3306/rentcloundprofile?createDatabaseIfNotExist=true
     username: root
     password: root
-
   jpa:
     show-sql: true
     hibernate:
@@ -18,7 +13,6 @@ spring:
       hibernate:
         show_sql: true
         format_sql: true
-  
 security:
   oauth2:
     resource:
@@ -27,7 +21,6 @@ security:
       client-id: mobile
       client-secret: mobile123
       resource-ids: oauth2-resource
-
 eureka:
   client:
     register-with-eureka: true
