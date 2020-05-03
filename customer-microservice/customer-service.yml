@@ -11,7 +11,20 @@ spring:
     properties:
       hibernate:
         show_sql: true
-        format_sql: true
+        format_sql: true      
+  cloud:
+    stream:
+      bindings:
+       messageOutput:
+           destination: customerChangeTopic
+           content-type: application/json
+           group: customerGroup          
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+    
 security:
   oauth2:
     resource:

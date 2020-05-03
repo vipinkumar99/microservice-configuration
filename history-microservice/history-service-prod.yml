@@ -12,6 +12,22 @@ security:
       client-id: mobile
       client-secret: mobile123
       resource-ids: oauth2-resource
+      
+spring:
+  cloud:
+    stream:
+      bindings:
+         messageInput:
+            destination: customerChangeTopic
+            content-type: application/json
+            group: customerGroup
+            
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+    
 eureka:
   client:
     register-with-eureka: true
